@@ -33,25 +33,25 @@ torchvision==0.25.0+cu128
     <br>
     <em><strong>Original image</strong></em>
     <br><br>
-    <img src="./images/01.png" height="180" />
-    <img src="./data/style/Garden with mallows.png" height="180" />
-    <img src="./images/02.png" height="180" />
-    <img src="./data/style/Sunset Effect 1900.png" height="180" />
+    <img src="./images/01.png" height="150" />
+    <img src="./data/style/Garden with mallows.png" height="150" />
+    <img src="./images/02.png" height="150" />
+    <img src="./data/style/Sunset Effect 1900.png" height="150" />
     <br>
-    <img src="./images/03.png" height="180" />
-    <img src="./data/style/Starry Night over the Rhône.png" height="180" />
-    <img src="./images/04.png" height="180" />
-    <img src="./data/style/Canoe on the Epte.png" height="180" />
+    <img src="./images/03.png" height="150" />
+    <img src="./data/style/Starry Night over the Rhône.png" height="150" />
+    <img src="./images/04.png" height="150" />
+    <img src="./data/style/Canoe on the Epte.png" height="150" />
     <br>
-    <img src="./images/05.png" height="180" />
-    <img src="./data/style/Zinien-Garten.png" height="180" />
-    <img src="./images/06.png" height="180" />
-    <img src="./data/style/Kanagawa Wave.png" height="180" />
+    <img src="./images/05.png" height="150" />
+    <img src="./data/style/Zinien-Garten.png" height="150" />
+    <img src="./images/06.png" height="150" />
+    <img src="./data/style/Kanagawa Wave.png" height="150" />
     <br>
-    <img src="./images/07.png" height="180" />
-    <img src="./data/style/Ben Giles.png" height="180" />
-    <img src="./images/08.png" height="180" />
-    <img src="./data/style/The Night Café.png" height="180" />
+    <img src="./images/07.png" height="150" />
+    <img src="./data/style/Ben Giles.png" height="150" />
+    <img src="./images/08.png" height="150" />
+    <img src="./data/style/The Night Café.png" height="150" />
     <br>
     <em><strong>Images after Neural Style Transfer</strong></em>
 </p>
