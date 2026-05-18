@@ -31,27 +31,27 @@ torchvision==0.25.0+cu128
 <p align="center">
     <img src="./data/content/Bridge.png" width="300" />
     <br>
-    <em><strong>Original image</strong></em>
+    <em><strong>Original Image</strong></em>
     <br><br>
-    <img src="./images/01.png" height="150" />
-    <img src="./data/style/Garden with mallows.png" height="150" />
-    <img src="./images/02.png" height="150" />
-    <img src="./data/style/Sunset Effect 1900.png" height="150" />
+    <img src="./images/01.png" height="160" />
+    <img src="./data/style/Garden with mallows.png" height="160" />
+    <img src="./images/02.png" height="160" />
+    <img src="./data/style/Sunset Effect 1900.png" height="160" />
     <br>
-    <img src="./images/03.png" height="150" />
-    <img src="./data/style/Starry Night over the Rhône.png" height="150" />
-    <img src="./images/04.png" height="150" />
-    <img src="./data/style/Canoe on the Epte.png" height="150" />
+    <img src="./images/03.png" height="160" />
+    <img src="./data/style/Starry Night over the Rhône.png" height="160" />
+    <img src="./images/04.png" height="160" />
+    <img src="./data/style/Canoe on the Epte.png" height="160" />
     <br>
-    <img src="./images/05.png" height="150" />
-    <img src="./data/style/Zinien-Garten.png" height="150" />
-    <img src="./images/06.png" height="150" />
-    <img src="./data/style/Kanagawa Wave.png" height="150" />
+    <img src="./images/05.png" height="160" />
+    <img src="./data/style/Zinien-Garten.png" height="160" />
+    <img src="./images/06.png" height="160" />
+    <img src="./data/style/Kanagawa Wave.png" height="160" />
     <br>
-    <img src="./images/07.png" height="150" />
-    <img src="./data/style/Ben Giles.png" height="150" />
-    <img src="./images/08.png" height="150" />
-    <img src="./data/style/The Night Café.png" height="150" />
+    <img src="./images/07.png" height="160" />
+    <img src="./data/style/Ben Giles.png" height="160" />
+    <img src="./images/08.png" height="160" />
+    <img src="./data/style/The Night Café.png" height="160" />
     <br>
     <em><strong>Images after Neural Style Transfer</strong></em>
 </p>
@@ -266,6 +266,41 @@ During training:
 5. Update $I_g$ using an optimizer
 6. Repeat until synthesis achieves a satisfactory blend of content, style, and smoothness
 
+### Why Neural Style Transfer is Intellectually Interesting
+
+Beyond its visual appeal, NST offers several conceptually important insights that extend well beyond the task of image
+stylization.
+
+The layer-wise interpretation of a CNN is perhaps the most elegant aspect of the framework. The observation that lower
+layers encode texture and higher layers encode semantics was not designed into VGG — it emerged from supervised training
+on image classification. NST exploits this emergent structure deliberately, treating a classifier's internal
+representations as a perceptual measurement device. This suggests that the hierarchical organization of features in deep
+networks carries genuine geometric and semantic meaning, not merely discriminative utility.
+
+The definition of content and style similarity is notably non-trivial. Content is measured as a direct feature distance
+in activation space, while style is measured as a distance between second-order statistics (Gram matrices) — discarding
+spatial layout entirely. The fact that these two very different notions of similarity, when combined, produce
+perceptually coherent results is a strong empirical validation of the representational structure learned by CNNs.
+
+A subtle but important observation is that the neural network itself is never trained during style transfer. VGG is
+fixed; its weights are not updated. What is being optimized is the input image itself, pixel by pixel. This is a
+fundamentally different computational paradigm from standard deep learning, where the model is the optimization
+variable. Here, the model is a fixed measurement instrument and the data is the unknown.
+
+This perspective connects NST to a broader class of problems known as inverse design — a paradigm with significant
+engineering relevance. Rather than asking "given a design, what is its output?", inverse design asks "given a desired
+output, what is the optimal input?" NST is a clean instantiation of this idea: the desired output is a perceptual
+specification (match this content, match this style), and the solution is found by gradient-based optimization over the
+input space. The same framework has since been applied to photonic structure design, drug molecule generation, acoustic
+metamaterials, and aerodynamic shape optimization — wherever a differentiable forward model exists and the design space
+is continuous.
+
+Finally, NST can be viewed as an early example of using a neural network as a learned perceptual loss. Instead of
+defining image quality with hand-crafted metrics (e.g., PSNR, SSIM), the loss is computed in a deep feature space that
+correlates more closely with human perception. This idea later became central to image super-resolution, image-to-image
+translation, and generative adversarial network training.
+
 ## Acknowledgement
+
 - [Style Transfer](https://i-systems.github.io/teaching/DL/iNotes/18_Style_Transfer.html)
 - [pytorch-neural-style-transfer](https://github.com/gordicaleksa/pytorch-neural-style-transfer)
